@@ -8,25 +8,25 @@ INF = int(1e9)
 dp = [[INF] * (1 << N) for _ in range(N)]
 
 
-def dfs(last, btm):  # DFS
+def dfs(cur, btm):  # DFS
     if btm == (1 << N) - 1:     # 모든 도시를 방문했다면
-        if adj[last][0]:
-            return adj[last][0]
+        if adj[cur][0]:  # 마지막은 0으로 돌아오는 경우의 값을 넣어줌
+            return adj[cur][0]
         else:
             return INF
-    if dp[last][btm] != INF:  # 이미 최소비용이 계산된경우
-        return dp[last][btm]
+    if dp[cur][btm] != INF:  # 이미 최소비용이 계산된경우
+        return dp[cur][btm]
 
     for i in range(1, N):
-        if not adj[last][i]:  # 가는 경로가 없으면 넘어감
+        if not adj[cur][i]:  # 가는 경로가 없으면 넘어감
             continue
         if btm & (1 << i):  # 이미 방문한 도시라면 넘어감
             continue
-        dp[last][btm] = min(dp[last][btm], dfs(i, btm | (1 << i))+adj[last][i])
-    return dp[last][btm]
+        dp[cur][btm] = min(dp[cur][btm], adj[cur][i] + dfs(i, btm | (1 << i)))
+    return dp[cur][btm]
 
 
-dfs(0, 1)
+dfs(0, 1)  # 1=> 0001 ,즉 0번 도시만 거침
 print(dfs(0, 1))
 """
 '''
