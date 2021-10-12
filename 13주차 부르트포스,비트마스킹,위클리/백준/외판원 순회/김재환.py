@@ -1,3 +1,7 @@
+"""
+https://red-pulse.tistory.com/29
+"""
+
 N = int(input())
 adj = []
 for i in range(N):
