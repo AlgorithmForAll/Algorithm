@@ -4,8 +4,9 @@ https://www.acmicpc.net/problem/1107
 """
 n = int(input())
 m = int(input())
-data = list(map(int, input().split()))
-data = set([i for i in range(10) if i not in data])
+data = set([i for i in range(10)])
+if m != 0:
+    data -= set(map(int, input().split()))
 
 answer = abs(100 - n)
 
