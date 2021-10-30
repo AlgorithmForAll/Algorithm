@@ -7,6 +7,7 @@ for _ in range(N):
     words.append(tmp)
     all += tmp
 all = set(all)
+
 if K < 5:
     print(0)
 else:

@@ -19,7 +19,6 @@ def get_start_time(time, duration):
 
 
 def solution(lines):
-    answer = 0
     print(lines)
     times = []
     for t in range(len(lines)):

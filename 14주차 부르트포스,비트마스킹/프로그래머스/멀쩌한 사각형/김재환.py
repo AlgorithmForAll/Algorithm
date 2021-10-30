@@ -6,7 +6,6 @@
 => h+w-최대공약수
 """
 
-
 def calc(w, h):
     if h == 0:
         return w

@@ -46,6 +46,7 @@ def BFS(y, x):
                         check[ny][nx][key] = True
                         new = ord(board[ny][nx])-ord('a')
                         new = key | (1 << new)
+                        check[ny][nx][new] = True
                         q.append([ny, nx, cnt+1, new])
                     elif 'A' <= board[ny][nx] <= 'F':
                         if key & (1 << ord(board[ny][nx])-ord('A')):
