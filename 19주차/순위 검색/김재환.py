@@ -6,6 +6,7 @@ def solution(info, query):
             for c in ['junior', 'senior', '-']:
                 for d in ['chicken', 'pizza', '-']:
                     data.setdefault((a, b, c, d), list()) # 모든 경우의 수를 리스트로 초기화
+                    # 튜플로 넣으면 문자열에 대한 처리가 필요 없어져서 좋은듯
     
     # 조건에 맞는 값을 넣는다. 키는 튜플로 넣어줌
     for i in info:
