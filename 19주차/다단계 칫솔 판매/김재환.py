@@ -1,6 +1,4 @@
 def solution(enroll, referral, seller, amount):
-    answer = []
-
     benefit = dict()
     ref = dict()
     for i in range(len(enroll)):
