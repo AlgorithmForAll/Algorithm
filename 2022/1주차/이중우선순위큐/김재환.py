@@ -17,8 +17,6 @@ def solution(operations):
             elif num =='-1' and len(smallQ)!=0: # 최솟값 제거
                 small = heapq.heappop(smallQ)
                 bigQ.remove(-small)
-        print("big q:", bigQ)
-        print("small q:", smallQ)
     # 마지막에 각 큐에서 최댓값, 최솟값을 뽑아온다.
     big = 0
     small = 0
