@@ -1,3 +1,6 @@
+from collections import deque
+
+
 def solution(n):
 
     answer = [[0 for j in range(1, i+1)] for i in range(1, n+1)]
@@ -17,3 +20,7 @@ def solution(n):
             answer[x][y] = num
             num += 1
     return sum(answer, [])
+
+
+q = deque([])
+q.popleft()
