@@ -21,104 +21,105 @@
 from sys import stdin
 input = stdin.readline
 
-# 트라이 
+# 트라이
+
+
 class Node(object):
-	def __init__(self, key, data = None):
-		self.key = key #단어의 글자 하나를 담는 곳
-		self.data = data #마지막 글자인지 나타내는 flag
-						#마지막 글자의 경우에 단어 전체를 data 필드에 저장 
-		self.children = {} #dict
+    def __init__(self, key, data=None):
+        self.key = key  # 단어의 글자 하나를 담는 곳
+        self.data = data  # 마지막 글자인지 나타내는 flag
+        # 마지막 글자의 경우에 단어 전체를 data 필드에 저장
+        self.children = {}  # dict
+
 
 class Trie(object):
-	def __init__(self):
-		self.root = Node(None) 
+    def __init__(self):
+        self.root = Node(None)
 
-	def insert(self,word):
-		cur = self.root #루트부터 시작 
-		
-		for x in word:
-			if x not in cur.children: #단어의 한 문자가 딕셔너리 자료형 cur의 자식에 없으면 
-				cur.children[x] = Node(x)
-			cur = cur.children[x] #cur의 위치를 하위 노드로 변경
+    def insert(self, word):
+        cur = self.root  # 루트부터 시작
 
-		#마지막 글자이면 노드의 data필드에 문자열 전체 저장
-		cur.data = word
+        for x in word:
+            if x not in cur.children:  # 단어의 한 문자가 딕셔너리 자료형 cur의 자식에 없으면
+                cur.children[x] = Node(x)
+            cur = cur.children[x]  # cur의 위치를 하위 노드로 변경
 
-	def search(self, word):
-		cur = self.root #루트부터 시작 
-		for c in word:
-			if c in cur.children:
-				cur = cur.children[c] #cur 업데이트 
+        # 마지막 글자이면 노드의 data필드에 문자열 전체 저장
+        cur.data = word
 
-				if cur.data is not None:
-					return True
-			else:
-				return self.insert(word)
+    def search(self, word):
+        cur = self.root  # 루트부터 시작
+        for c in word:
+            if c in cur.children:
+                cur = cur.children[c]  # cur 업데이트
 
-		return True 
+                if cur.data is not None:
+                    return True
+            else:
+                return self.insert(word)
+
+        return True
 
 
 def solve_tree(N, phone_number):
-	tree = Trie()
-	boolean = True
+    tree = Trie()
+    boolean = True
 
-	for i in range(N):
-		number = phone_number[i]
+    for i in range(N):
+        number = phone_number[i]
 
-		if tree.search(number):
-			boolean = False
-			break
-	
-	if boolean:
-		return("YES")
-	else:
-		return("NO")
+        if tree.search(number):
+            boolean = False
+            break
+
+    if boolean:
+        return("YES")
+    else:
+        return("NO")
 
 
 # 해시함수
-def solve_hash(N,phone_number):
-	dic = {}
-	flag = True
-	#폰번호를 저장 
-	for number in phone_number:
-		dic[number] = 1
-	
-	for number in phone_number:
-		tmp = ""
-		for ch in number:
-			tmp += ch #폰번호를 한글자씩 쪼개서 붙임
-			if tmp in dic and tmp != number:
-				flag = False
-				break
-	
-	if flag:
-		return("YES")
-	else:
-		return("NO")
+def solve_hash(N, phone_number):
+    dic = {}
+    flag = True
+    # 폰번호를 저장
+    for number in phone_number:
+        dic[number] = 1
+
+    for number in phone_number:
+        tmp = ""
+        for ch in number:
+            tmp += ch  # 폰번호를 한글자씩 쪼개서 붙임
+            if tmp in dic and tmp != number:
+                flag = False
+                break
+
+    if flag:
+        return("YES")
+    else:
+        return("NO")
 
 
-# 정렬 
-def solve_sort(N,phone_number):
-	phone_number.sort(key=str)
-	flag = True
-	for i in range(N-1):
-		if phone_number[i] == phone_number[i+1][:len(phone_number[i])]:
-			flag = False
-			break
+# 정렬
+def solve_sort(N, phone_number):
+    phone_number.sort(key=str)
+    flag = True
+    for i in range(N-1):
+        if phone_number[i] == phone_number[i+1][:len(phone_number[i])]:
+            flag = False
+            break
 
-	if flag:
-		return("YES")
-	else:
-		return("NO")
+    if flag:
+        return("YES")
+    else:
+        return("NO")
 
 
 if __name__ == "__main__":
-	T = int(input())
+    T = int(input())
 
-	for _ in range(T):
-		N = int(input())
-		phone_number = list( input().rstrip() for _ in range(N))
-		result = solve_hash(N,phone_number)
-		print(result)
-
-
+    for _ in range(T):
+        N = int(input())
+        phone_number = list(input().rstrip() for _ in range(N))
+        result = solve_hash(N, phone_number)
+        print(result)
