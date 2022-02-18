@@ -1,4 +1,5 @@
 """
+슬라이딩 윈도우
 """
 import sys
 input = sys.stdin.readline

@@ -1,7 +1,5 @@
 from collections import deque
 from itertools import combinations
-from unittest import result
-
 N, M = map(int, input().split())
 
 virus = []
