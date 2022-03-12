@@ -10,11 +10,22 @@
 | [김재환](https://github.com/Dev-Guccin) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ghks2047)](https://solved.ac/ghks2047) |
 | [신민서](https://github.com/MSIQOC) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=msiqoc)](https://solved.ac/msiqoc) |
 | [유지혁](https://github.com/landturtler) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=buc03226)](https://solved.ac/buc03226) |
+  
+
+<br/>
+
+## 진행방식
+
+매 주 `백준 5문제` & `프로그래머스 3문제` 
+
+<br/>
 
 ## 문제 사이트
 
 [백준 그룹](https://www.acmicpc.net/group/workbook/list/12672) <br/>
-[프로그래머스](https://programmers.co.kr/learn/challenges?tab=all_challenges) <br/>
+[프로그래머스](https://programmers.co.kr/learn/challenges?tab=all_challenges) 
+  
+<br/>
 
 ## 알고리즘 분류
 
