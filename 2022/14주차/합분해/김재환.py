@@ -12,7 +12,6 @@ for i in range(1, K+1):
     dp[1][i] = i
 for j in range(1, N+1):
     dp[j][1] = 1
-print(dp)
 
 for i in range(2, N+1):
     for j in range(2, K+1):
