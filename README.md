@@ -10,7 +10,7 @@
 | [김재환](https://github.com/Dev-Guccin) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=ghks2047)](https://solved.ac/ghks2047) |
 | [신민서](https://github.com/MSIQOC) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=msiqoc)](https://solved.ac/msiqoc) |
 | [유지혁](https://github.com/landturtler) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=buc03226)](https://solved.ac/buc03226) |
-  
+| [이수하](https://github.com/LeeSuHa98) | [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=lapi12)](https://solved.ac/lapi12) |
 
 <br/>
 
