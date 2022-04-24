@@ -42,6 +42,8 @@ class Mal():
 
 def isDuplicate(i, mals, malsLocation, next):
     for j in range(4):
+        if i == j:
+            continue
         if mals[j] == next and malsLocation[j] == malsLocation[i]:
             return True
     return False
@@ -80,7 +82,7 @@ def calc(n, mal):
             if next == 42:  # 도착한 경우
                 break
 
-        if next == 40:
+        if next >= 40:
             _malsLocation[i] = 0
 
         if isDuplicate(i, _mals, _malsLocation, next):
@@ -99,8 +101,6 @@ def calc(n, mal):
         newMal.malsLocation = list(_malsLocation)
         if big < _total:
             big = _total
-            print(n, newMal.mals, newMal.total)
-
         calc(n+1, newMal)
 
 
