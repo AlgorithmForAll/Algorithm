@@ -13,7 +13,7 @@ if __name__ == "__main__":
     #파이어볼 이동
     for _ in range(K):
         while fireballs:
-        	cx, cy, cm, cs, cd = fireballs.pop(0)
+        	cx, cy, cm, cs, cd = fireballs.pop()
         	nx = (cx + cs * dir[cd][0]) % N  
         	ny = (cy + cs * dir[cd][1]) % N
         	arr[nx][ny].append([cm, cs, cd])
