@@ -18,9 +18,10 @@ if __name__ == "__main__":
         	ny = (cy + cs * dir[cd][1]) % N
         	arr[nx][ny].append([cm, cs, cd])
 
-    # 2개 이상인지 체크
+
         for x in range(N):
             for y in range(N):
+                #2개 이상인 경우 
                 if len(arr[x][y]) > 1:
                     sum_m, sum_s, cnt_odd, cnt_even, cnt = 0, 0, 0, 0, len(arr[x][y])
                     while arr[x][y]:
@@ -35,7 +36,7 @@ if __name__ == "__main__":
                         nd = [0, 2, 4, 6]
                     else:
                         nd = [1, 3, 5, 7]
-                    if sum_m//5:  # 질량 0이면 소멸
+                    if sum_m//5:  # 소멸
                         for d in nd:
                             fireballs.append([x, y, sum_m//5, sum_s//cnt, d])
 
