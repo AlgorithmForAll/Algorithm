@@ -43,6 +43,9 @@ for n in range(N-1):
     # 처음 나온 값이면 비율이 1이고 연산이 된 값이면 다른 값임. 비율을 맞추기 위해 최소 공배수로 만든다.
     am = R[b]/g * p
     bm = R[a]/g * q
+    # 1,1    3,1
+    # am = 1*3
+    # bm = 1*1
     g = gcd(am, bm)  # 비율에 대해서
     visited = [0 for i in range(N)]
     dfs(a, am / g)  # 핸재 노드에 am/g를 곱해야 적절한 비율이 된다.
