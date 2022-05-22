@@ -28,5 +28,6 @@ for i in range(num):
         if (slope is None) or (cur_slope > slope):
             slope = cur_slope
             count += 1
+            
     count_list.append(count)
 print(max(count_list))
