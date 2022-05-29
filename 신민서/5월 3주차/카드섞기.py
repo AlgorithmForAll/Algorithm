@@ -13,6 +13,7 @@ final = [[] for _ in range(3)]
 
 for i in range(len(s)):
     final[p[i]].append(s[i])
+
 arr = deepcopy(s)
 narr = deepcopy(arr)
 r = 0
