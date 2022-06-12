@@ -10,10 +10,10 @@ dp[1] = 0
 # dp 구하기
 for n in range(2, N+1):
     if n % 3 == 0:
-        dp[n] = min(dp[n], dp[n//3]+1)
+        dp[n] = min(dp[n], dp[n//3]+1)  # 나누어 떨어지는 경우 작은 값을 적용
     if n % 2 == 0:
-        dp[n] = min(dp[n], dp[n//2]+1)
-    dp[n] = min(dp[n], dp[n-1]+1)
+        dp[n] = min(dp[n], dp[n//2]+1)  # 나누어 떨어지는 경우 작은 값을 적용
+    dp[n] = min(dp[n], dp[n-1]+1)  # 1을 뺀경우를 고려하여 작은 값을 적용
 
 print(dp[N])
 tmp = []
@@ -32,4 +32,7 @@ while True:
     if dp[n] > dp[N-1]:
         n = N-1
     N = n
+# print(dp)  # [0, 0, 1, 1, 2, 3, 2, 3, 3, 2, 3]
+# 10(3) - 9(2) - 3(1) - 1(0)
+#       - 5(3) - 4(2) - 2(1) - 1(0)
 print(" ".join(map(str, tmp)))
