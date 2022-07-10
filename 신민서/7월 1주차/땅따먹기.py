@@ -1,4 +1,4 @@
-def solution(land):g
+def solution(land):
     D = [[0 for _ in range(4)] for __ in range(len(land))]
     D[0][0] = land[0][0]
     D[0][1] = land[0][1]
